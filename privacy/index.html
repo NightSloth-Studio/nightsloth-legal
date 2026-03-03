@@ -1,55 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-        h2 {
-            color: #34495e;
-            margin-top: 30px;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Datenschutzerklärung</title>
+  <style>
+    :root { --fg:#111; --muted:#555; --bg:#fff; --card:#f6f7f9; --line:#e6e7ea; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; color:var(--fg); background:var(--bg); }
+    header { padding:28px 16px; border-bottom:1px solid var(--line); }
+    main { max-width: 900px; margin: 0 auto; padding: 18px 16px 60px; }
+    h1 { margin:0 0 6px; font-size: 26px; }
+    .meta { color:var(--muted); font-size: 14px; }
+    h2 { margin-top: 26px; font-size: 18px; }
+    p, li { line-height: 1.55; }
+    .card { background: var(--card); border:1px solid var(--line); border-radius: 12px; padding: 14px 14px; }
+    code { background:#eef0f3; padding:2px 6px; border-radius:6px; }
+    a { color: inherit; }
+    .muted { color: var(--muted); }
+    footer { border-top:1px solid var(--line); padding: 18px 16px; color: var(--muted); font-size: 13px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Datenschutzerklärung</h1>
-        <p><strong>Zuletzt aktualisiert:</strong> 2026-03-03</p>
-        
-        <h2>1. Einleitung</h2>
-        <p>Willkommen zu unserer Datenschutzerklärung. Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst.</p>
-        
-        <h2>2. Verantwortlicher</h2>
-        <p>NightSloth-Studio</p>
-        
-        <h2>3. Datenerfassung und Verwendung</h2>
-        <p>Hier können Sie Informationen über die Datenerfassung und Verwendung einfügen.</p>
-        
-        <h2>4. Ihre Rechte</h2>
-        <p>Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer persönlichen Daten.</p>
-        
-        <h2>5. Kontakt</h2>
-        <p>Bei Fragen zur Datenschutzerklärung kontaktieren Sie uns bitte.</p>
+<header>
+  <main>
+    <h1>Datenschutzerklärung</h1>
+    <div class="meta">
+      Für die App: <strong>{{APP_NAME}}</strong> • Stand: <strong>{{LAST_UPDATED_DATE}}</strong>
     </div>
+  </main>
+</header>
+
+<main>
+  <div class="card">
+    <p><strong>Verantwortlicher</strong><br>
+      {{PROVIDER_NAME}}<br>
+      {{PROVIDER_ADDRESS_LINE}}<br>
+      {{PROVIDER_POSTAL_CITY}}<br>
+      E-Mail: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>
+    </p>
+    <p class="muted">
+      Hinweis: Diese Datenschutzerklärung informiert darüber, welche personenbezogenen Daten in der App verarbeitet werden,
+      zu welchen Zwecken und auf welcher Rechtsgrundlage. Je nach Funktionsumfang kann eine Anpassung erforderlich sein.
+    </p>
+  </div>
+
+  <h2>1. Welche Daten verarbeiten wir?</h2>
+  <p>Wir verarbeiten Daten, die zur Bereitstellung und Verbesserung der App sowie zur Abwicklung von In-App-Käufen/Abos und Werbung erforderlich sind.</p>
+
+  <h3>1.1 Konto & Anmeldung (Firebase Authentication)</h3>
+  <ul>
+    <li><strong>Anmeldedaten</strong> (z. B. E-Mail-Adresse bei E-Mail-Login oder Google-Konto-Identifikatoren bei Google Sign-In)</li>
+    <li><strong>UID</strong> (interne Benutzer-ID) und ggf. Basis-Profilinformationen, die vom Provider bereitgestellt werden</li>
+  </ul>
+  <p>Die Authentifizierung erfolgt über <strong>Firebase Authentication</strong> (Google). Anbieter: Google Ireland Limited (EU) / Google LLC (USA).</p>
+
+  <h3>1.2 App-Nutzung & Inhalte (z. B. Zeiterfassung/Projekte)</h3>
+  <ul>
+    <li><strong>Von dir eingegebene Inhalte</strong> (z. B. Projektname, Arbeitszeiten, Notizen/Kommentare – je nach App-Funktion)</li>
+    <li><strong>Synchronisationsdaten</strong> (falls Cloud Sync aktiv ist), gespeichert in <strong>Cloud Firestore</strong></li>
+  </ul>
+  <p>Wenn du Cloud-Sync nutzt, werden deine Daten mit deinem Konto verknüpft gespeichert, um sie auf mehreren Geräten verfügbar zu machen.</p>
+
+  <h3>1.3 Käufe/Abos (Google Play + RevenueCat)</h3>
+  <ul>
+    <li><strong>Kauf-/Abo-Status</strong> (aktiv/inaktiv), Produkt-IDs, Laufzeit/Expiration, Trial-Status</li>
+    <li><strong>Store-Transaktionsdaten</strong> (z. B. Order/Transaction-ID, ohne vollständige Zahlungsdaten)</li>
+  </ul>
+  <p>
+    Die Zahlungsabwicklung erfolgt über <strong>Google Play</strong>. Zur Vereinfachung der Aboverwaltung nutzen wir <strong>RevenueCat</strong>.
+    RevenueCat verarbeitet hierzu u. a. den Kaufstatus und technische Identifikatoren.
+  </p>
+
+  <h3>1.4 Werbung (AdMob)</h3>
+  <p>Wenn die App Werbung anzeigt, nutzen wir <strong>Google AdMob</strong>. Dabei können je nach Einwilligung folgende Daten verarbeitet werden:</p>
+  <ul>
+    <li><strong>Werbe-ID</strong> (Advertising ID) bzw. Gerätekennungen</li>
+    <li><strong>IP-Adresse</strong> (für Auslieferung/Geo grob), Geräte-/App-Informationen, Anzeigeninteraktionen</li>
+    <li><strong>Consent-Status</strong> (Einwilligungsstatus), ggf. Einstellungen „personalisierte“ vs. „nicht-personalisierte“ Anzeigen</li>
+  </ul>
+  <p>
+    In der EU/EEA fragen wir – soweit erforderlich – vor der Ausspielung personalisierter Werbung eine Einwilligung über die Google
+    <strong>User Messaging Platform (UMP)</strong> ab. Du kannst deine Auswahl später in den App-Einstellungen unter „Privacy options/Datenschutz-Optionen“ ändern (falls verfügbar).
+  </p>
+
+  <h3>1.5 Diagnose/Fehler (optional)</h3>
+  <p class="muted">
+    Entferne diesen Abschnitt, falls du keine Crash-/Analytics-Tools nutzt.
+  </p>
+  <ul>
+    <li><strong>Crash-/Fehlerdaten</strong> (z. B. Absturzberichte), ggf. Geräteinformationen (Modell, OS-Version)</li>
+    <li><strong>Nutzungsstatistiken</strong> (z. B. Screens/Events), falls Analytics aktiviert ist</li>
+  </ul>
+  <p>Typische Anbieter: Firebase Crashlytics / Firebase Analytics (Google).</p>
+
+  <h2>2. Zwecke und Rechtsgrundlagen</h2>
+  <ul>
+    <li><strong>Bereitstellung der App</strong> (Art. 6 Abs. 1 lit. b DSGVO – Vertrag/vertragsähnliche Nutzung)</li>
+    <li><strong>Cloud-Sync & Konto</strong> (Art. 6 Abs. 1 lit. b DSGVO)</li>
+    <li><strong>Abos/Käufe verwalten</strong> (Art. 6 Abs. 1 lit. b DSGVO)</li>
+    <li><strong>Werbung</strong> (Einwilligung, Art. 6 Abs. 1 lit. a DSGVO, soweit erforderlich; sonst berechtigtes Interesse, Art. 6 Abs. 1 lit. f DSGVO, z. B. für nicht-personalisierte Ausspielung)</li>
+    <li><strong>Sicherheit/Fehleranalyse</strong> (Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse an Stabilität/Sicherheit)</li>
+  </ul>
+
+  <h2>3. Empfänger / Dienstleister (Auftragsverarbeitung)</h2>
+  <p>Wir setzen folgende Dienstleister ein (je nach App-Konfiguration):</p>
+  <ul>
+    <li><strong>Google Firebase</strong> (Auth, Firestore, ggf. Analytics/Crashlytics): <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Datenschutz</a></li>
+    <li><strong>Google AdMob</strong> (Werbung): <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Info</a></li>
+    <li><strong>RevenueCat</strong> (Aboverwaltung): <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">Datenschutz</a></li>
+    <li><strong>Google Play</strong> (Zahlungsabwicklung): <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutz</a></li>
+  </ul>
+
+  <h2>4. Drittlandübermittlung</h2>
+  <p>
+    Einige Dienstleister (z. B. Google, RevenueCat) können Daten auch außerhalb der EU/des EWR verarbeiten (z. B. USA).
+    In solchen Fällen stützen sich Anbieter typischerweise auf geeignete Garantien (z. B. Standardvertragsklauseln).
+    Details findest du in den Datenschutzhinweisen der jeweiligen Anbieter (Links oben).
+  </p>
+
+  <h2>5. Speicherdauer</h2>
+  <ul>
+    <li>Konto-/Cloud-Daten: solange du ein Konto nutzt bzw. bis du sie in der App löschst oder Löschung anforderst.</li>
+    <li>Kauf-/Abo-Informationen: solange dies zur Abwicklung/Verwaltung erforderlich ist (z. B. Laufzeit, Nachweise).</li>
+    <li>Crash/Analytics (falls aktiv): gemäß den Einstellungen/Standardfristen der Anbieter.</li>
+  </ul>
+
+  <h2>6. Deine Rechte</h2>
+  <p>Du hast – soweit die gesetzlichen Voraussetzungen erfüllt sind – folgende Rechte:</p>
+  <ul>
+    <li>Auskunft (Art. 15 DSGVO)</li>
+    <li>Berichtigung (Art. 16 DSGVO)</li>
+    <li>Löschung (Art. 17 DSGVO)</li>
+    <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+    <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+    <li>Widerspruch (Art. 21 DSGVO)</li>
+    <li>Widerruf einer Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+    <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+  </ul>
+  <p>Kontakt: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+
+  <h2>7. Änderungen</h2>
+  <p>Wir können diese Datenschutzerklärung aktualisieren, wenn sich Funktionen, rechtliche Anforderungen oder Dienstleister ändern.</p>
+</main>
+
+<footer>
+  <main>
+    <div>© {{YEAR}} {{PROVIDER_NAME}} • Datenschutzerklärung • Stand: {{LAST_UPDATED_DATE}}</div>
+  </main>
+</footer>
 </body>
 </html>
