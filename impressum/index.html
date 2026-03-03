@@ -1,21 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Impressum</title>
+  <style>
+    :root { --fg:#111; --muted:#555; --bg:#fff; --card:#f6f7f9; --line:#e6e7ea; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; color:var(--fg); background:var(--bg); }
+    header { padding:28px 16px; border-bottom:1px solid var(--line); }
+    main { max-width: 900px; margin: 0 auto; padding: 18px 16px 60px; }
+    h1 { margin:0 0 6px; font-size: 26px; }
+    .meta { color:var(--muted); font-size: 14px; }
+    h2 { margin-top: 26px; font-size: 18px; }
+    p, li { line-height: 1.55; }
+    .card { background: var(--card); border:1px solid var(--line); border-radius: 12px; padding: 14px 14px; }
+    a { color: inherit; }
+    footer { border-top:1px solid var(--line); padding: 18px 16px; color: var(--muted); font-size: 13px; }
+  </style>
 </head>
 <body>
+<header>
+  <main>
     <h1>Impressum</h1>
-    <p><strong>Company Name:</strong> Your Company Name</p>
-    <p><strong>Address:</strong> Your Company Address</p>
-    <p><strong>Phone:</strong> Your Company Phone</p>
-    <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    <p><strong>VAT-ID:</strong> Your VAT-ID</p>
-    <p><strong>Managing Director:</strong> Your Managing Director</p>
-    <footer>
-        <p>Last updated: 2026-03-03 11:42:02 UTC</p>
-    </footer>
+    <div class="meta">Stand: <strong>{{LAST_UPDATED_DATE}}</strong></div>
+  </main>
+</header>
+
+<main>
+  <div class="card">
+    <p><strong>{{PROVIDER_NAME}}</strong><br>
+      {{PROVIDER_ADDRESS_LINE}}<br>
+      {{PROVIDER_POSTAL_CITY}}<br>
+      Deutschland
+    </p>
+
+    <p><strong>Kontakt</strong><br>
+      E-Mail: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a><br>
+      <!-- Optional: Telefon (wenn du es angeben willst) -->
+      <!-- Telefon: {{PHONE}} -->
+    </p>
+
+    <p><strong>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</strong><br>
+      {{PROVIDER_NAME}}, Anschrift wie oben
+    </p>
+
+    <!-- Optional: Wenn vorhanden -->
+    <!--
+    <p><strong>Umsatzsteuer-ID</strong><br>
+      USt-IdNr.: {{VAT_ID}}
+    </p>
+    -->
+
+    <!-- Optional: Wenn im Handelsregister eingetragen -->
+    <!--
+    <p><strong>Registereintrag</strong><br>
+      Register: {{REGISTER_NAME}}<br>
+      Registernummer: {{REGISTER_NO}}<br>
+      Registergericht: {{REGISTER_COURT}}
+    </p>
+    -->
+  </div>
+
+  <h2>Hinweis zu externen Links</h2>
+  <p>
+    Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
+    Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+  </p>
+
+  <!-- Optional: EU-Streitbeilegung / Verbraucherstreitbeilegung -->
+  <h2>Streitbeilegung</h2>
+  <p class="muted">
+    Optional – je nach Status/Anforderungen. Wenn du nicht teilnimmst, kannst du das so lassen.
+  </p>
+  <p>
+    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+    <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>
+  </p>
+  <p>
+    Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+</main>
+
+<footer>
+  <main>
+    <div>© {{YEAR}} {{PROVIDER_NAME}} • Impressum • Stand: {{LAST_UPDATED_DATE}}</div>
+  </main>
+</footer>
 </body>
 </html>
