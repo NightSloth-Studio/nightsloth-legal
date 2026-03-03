@@ -1,13 +1,133 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutzungsbedingungen (AGB)</title>
+  <style>
+    :root { --fg:#111; --muted:#555; --bg:#fff; --card:#f6f7f9; --line:#e6e7ea; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; color:var(--fg); background:var(--bg); }
+    header { padding:28px 16px; border-bottom:1px solid var(--line); }
+    main { max-width: 900px; margin: 0 auto; padding: 18px 16px 60px; }
+    h1 { margin:0 0 6px; font-size: 26px; }
+    .meta { color:var(--muted); font-size: 14px; }
+    h2 { margin-top: 26px; font-size: 18px; }
+    p, li { line-height: 1.55; }
+    .card { background: var(--card); border:1px solid var(--line); border-radius: 12px; padding: 14px 14px; }
+    code { background:#eef0f3; padding:2px 6px; border-radius:6px; }
+    a { color: inherit; }
+    .muted { color: var(--muted); }
+    footer { border-top:1px solid var(--line); padding: 18px 16px; color: var(--muted); font-size: 13px; }
+  </style>
 </head>
 <body>
-    <h1>Terms of Service</h1>
-    <p>Welcome to our Terms of Service.</p>
-    <!-- Add your content here -->
+<header>
+  <main>
+    <h1>Nutzungsbedingungen (AGB)</h1>
+    <div class="meta">
+      Für die App: <strong>{{APP_NAME}}</strong> • Stand: <strong>{{LAST_UPDATED_DATE}}</strong>
+    </div>
+  </main>
+</header>
+
+<main>
+  <div class="card">
+    <p><strong>Anbieter</strong><br>
+      {{PROVIDER_NAME}}<br>
+      {{PROVIDER_ADDRESS_LINE}}<br>
+      {{PROVIDER_POSTAL_CITY}}<br>
+      E-Mail: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>
+    </p>
+  </div>
+
+  <h2>1. Geltungsbereich</h2>
+  <p>
+    Diese Nutzungsbedingungen gelten für die Nutzung der App <strong>{{APP_NAME}}</strong> und aller zugehörigen Dienste/Funktionen
+    (z. B. Cloud-Sync, Pro-Abo). Abweichende Bedingungen des Nutzers gelten nicht.
+  </p>
+
+  <h2>2. Leistungsbeschreibung</h2>
+  <p>
+    Die App dient zur Erfassung und Auswertung von Zeiten/Projekten/Arbeitsstunden (je nach Funktionsumfang).
+    Bestimmte Funktionen können als <strong>Pro</strong>-Funktionen bereitgestellt werden.
+  </p>
+
+  <h2>3. Registrierung / Konto</h2>
+  <ul>
+    <li>Für bestimmte Funktionen (z. B. Cloud-Sync) kann ein Konto erforderlich sein.</li>
+    <li>Du bist dafür verantwortlich, deine Zugangsdaten geheim zu halten und Missbrauch zu verhindern.</li>
+  </ul>
+
+  <h2>4. Pro-Abo, Testphase, Abrechnung</h2>
+  <p><strong>Abwicklung</strong></p>
+  <ul>
+    <li>Abos und Zahlungen werden über <strong>Google Play</strong> abgewickelt.</li>
+    <li>Der genaue Preis, die Laufzeit und ggf. Test-/Einführungsangebote werden im Store angezeigt.</li>
+  </ul>
+
+  <p><strong>Testphase (Beispiel)</strong></p>
+  <p class="muted">
+    Passe den Abschnitt an, falls du keine Testphase anbietest.
+  </p>
+  <ul>
+    <li>Sofern angeboten, gilt: <strong>7 Tage kostenlos</strong>, danach Preis gemäß Store (z. B. monatlich), sofern nicht vorher gekündigt wird.</li>
+  </ul>
+
+  <p><strong>Verlängerung & Kündigung</strong></p>
+  <ul>
+    <li>Abos verlängern sich automatisch, sofern sie nicht rechtzeitig vor Ablauf der aktuellen Periode gekündigt werden.</li>
+    <li>Die Kündigung erfolgt über <strong>Google Play</strong> (Play Store → Profil → Zahlungen & Abos → Abos).</li>
+    <li>Nach Kündigung bleibt Pro bis zum Ende der bereits bezahlten Periode (bzw. bis zum Ende der Testphase) aktiv.</li>
+  </ul>
+
+  <p><strong>Rückerstattungen</strong></p>
+  <ul>
+    <li>Rückerstattungen richten sich nach den Regeln von Google Play.</li>
+  </ul>
+
+  <h2>5. Werbung</h2>
+  <p>
+    In der kostenlosen Version kann die App Werbung enthalten. In der Pro-Version kann Werbung reduziert oder entfernt sein (je nach Beschreibung in der App).
+  </p>
+
+  <h2>6. Pflichten des Nutzers</h2>
+  <ul>
+    <li>Du darfst die App nicht missbräuchlich verwenden (z. B. Manipulation, automatisierte Zugriffe, Reverse Engineering, Umgehung von Sicherheitsmaßnahmen).</li>
+    <li>Du bist für die von dir eingegebenen Inhalte verantwortlich (z. B. Projekttexte/Notizen).</li>
+  </ul>
+
+  <h2>7. Verfügbarkeit & Änderungen</h2>
+  <p>
+    Wir bemühen uns um eine hohe Verfügbarkeit, können aber keine ununterbrochene Verfügbarkeit garantieren.
+    Wir können Funktionen ändern oder einstellen, wenn dies erforderlich ist (z. B. Sicherheit, technische Weiterentwicklung).
+  </p>
+
+  <h2>8. Haftung</h2>
+  <p class="muted">Hinweis: Formulierungen zur Haftung können je nach Anbieterstatus/Unternehmensform angepasst werden.</p>
+  <ul>
+    <li>Wir haften unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit.</li>
+    <li>Bei leichter Fahrlässigkeit haften wir nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) und begrenzt auf den typischerweise vorhersehbaren Schaden.</li>
+    <li>Für Datenverluste haftest du mit, soweit du nicht durch angemessene Maßnahmen (z. B. Backups) vorbeugst.</li>
+  </ul>
+
+  <h2>9. Datenschutz</h2>
+  <p>
+    Informationen zur Verarbeitung personenbezogener Daten findest du in der
+    <a href="{{PRIVACY_URL}}">Datenschutzerklärung</a>.
+  </p>
+
+  <h2>10. Schlussbestimmungen</h2>
+  <ul>
+    <li>Es gilt das Recht der Bundesrepublik Deutschland, soweit dem keine zwingenden Verbraucherschutzvorschriften entgegenstehen.</li>
+    <li>Gerichtsstand ist – soweit zulässig – der Sitz des Anbieters.</li>
+    <li>Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li>
+  </ul>
+</main>
+
+<footer>
+  <main>
+    <div>© {{YEAR}} {{PROVIDER_NAME}} • Nutzungsbedingungen • Stand: {{LAST_UPDATED_DATE}}</div>
+  </main>
+</footer>
 </body>
 </html>
